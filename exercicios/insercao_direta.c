@@ -5,27 +5,20 @@
 int main()
 {
    int vet[] = {7,4,2,9,5,3};
-   int j = 0, aux=0, it;
+   int j = 0, aux=0, it, n=6;
    bool flag = false;
 
-   while(!flag){
-        for(it=0;it<6;it++){
-            if(it!=0){
-                if(vet[it]<vet[j]){
-                    aux = vet[it];
-                    vet[it] = vet[j];
-                    vet[j] = aux;
-                }else{
-                    
-                }
-            }
-            j = it-1;
+    for (it=1; it<n; it++) {
+        aux = vet[it];
+        j = it-1;
+        while(j>=0 && aux<vet[j]){
+            vet[j+1] = vet[j];
+            j--;
         }
-        if(it ==6)
-            flag = true;
-    }
+        vet[j+1]=aux;
+  }
 
-    for(int i=0;i<6;i++){
+    for(int i=0;i<n;i++){
         printf("%d\t",vet[i]);
     }
     printf("\n");
