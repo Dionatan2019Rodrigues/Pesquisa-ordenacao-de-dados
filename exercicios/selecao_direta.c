@@ -15,7 +15,7 @@ int main()
         aux = vet[i];
         vet[i] = vet[pos_menor];
         vet[pos_menor] = aux;
-        
+
     }
 
     for(int i=0;i<tam;i++){
