@@ -74,12 +74,31 @@ void shell_sort(int *v, int tam){
     }
 }
 
-void quick_sort(int *v, int tam){
-    int i, j;
+void quick_sort(int *v, int first, int last){
 
-    do{
+    int i, j, pivot, temp;
 
-    }while(i<j);
+    if(first<last){
+        pivot=first;
+        i=first;
+        j=last;
+        while(i<j){
+            while(v[i]<=v[pivot]&&i<last)
+                i++;
+            while(v[j]>v[pivot])
+                j--;
+            if(i<j){
+                temp=v[i];
+                v[i]=v[j];
+                v[j]=temp;
+            }
+        }
+        temp=v[pivot];
+        v[pivot]=v[j];
+        v[j]=temp;
+        quick_sort(v,first,j-1);
+        quick_sort(v,j+1,last);
+    }
 }
 
 int main()
@@ -92,7 +111,7 @@ int main()
     //insercao_direta(v,tam);
     //selecao_direta(v,tam);
     //shell_sort(v,tam);
-    quick_sort(v,tam);
+    quick_sort(v,0,tam-1);
     imprime_vet(v,tam);
 
     return 0;
