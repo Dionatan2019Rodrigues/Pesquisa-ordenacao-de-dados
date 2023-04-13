@@ -101,14 +101,41 @@ void quick_sort(int *v, int first, int last){
     }
 }
 
-void heapify(){
-    
-}
-void max_heap(){
-    
-}
-void heap_sort(int *v, int tam){
+void heapify(int *v, int tam, int i){
+    int largest = i;
+    int aux=0;
+    int left = 2 * i + 1;
+    int right  = 2 * i + 2;
+ 
+    if ((left < tam) && (v[left] > v[largest]))
+        largest = left;
+ 
+    if ((right < tam) && (v[right] > v[largest]))
+        largest = right;
 
+    if (largest != i){  
+        aux = v[i];
+        v[i] = v[largest];
+        v[largest] = aux;
+ 
+        heapify(v, tam, largest);
+    }
+}
+
+void heap_sort(int *v, int tam){
+    int aux = 0;
+
+    for(int i=(tam/2)-1;i>=0;i++ ){
+        heapify(v,tam,i);
+    }
+
+    for(int i=tam-1;i>=0;i--){
+        aux = v[i];
+        v[i] = v[0];
+        v[0] = aux;
+
+        heapify(v,i,0);
+    }
 }
 
 int main()
