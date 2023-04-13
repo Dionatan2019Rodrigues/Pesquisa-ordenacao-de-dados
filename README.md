@@ -2,5 +2,5 @@
  Diciplina do 3ºsemestre do curso de ciência da computação
 
 ```
-$ gcc bubblesort.c   $ ./a.out
+$ gcc metodos_ordenacao.c   $ ./a.out
 ```

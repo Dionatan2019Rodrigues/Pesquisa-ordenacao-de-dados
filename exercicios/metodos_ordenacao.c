@@ -101,6 +101,16 @@ void quick_sort(int *v, int first, int last){
     }
 }
 
+void heapify(){
+    
+}
+void max_heap(){
+    
+}
+void heap_sort(int *v, int tam){
+
+}
+
 int main()
 {
     int v[] = {5,7,10,3,9,8,6,1,0,2,4};
@@ -111,7 +121,8 @@ int main()
     //insercao_direta(v,tam);
     //selecao_direta(v,tam);
     //shell_sort(v,tam);
-    quick_sort(v,0,tam-1);
+    //quick_sort(v,0,tam-1);
+    heap_sort(v,tam);
     imprime_vet(v,tam);
 
     return 0;
