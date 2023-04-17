@@ -125,7 +125,7 @@ void heapify(int *v, int tam, int i){
 void heap_sort(int *v, int tam){
     int aux = 0;
 
-    for(int i=(tam/2)-1;i>=0;i++ ){
+    for(int i=(tam/2)-1;i>=0;i--){
         heapify(v,tam,i);
     }
 
