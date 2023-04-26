@@ -52,6 +52,7 @@ void selecao_direta(int *v, int tam){
             if(v[j]<v[pos_menor])
                 pos_menor = j; 
         }
+        //swap
         aux = v[i];
         v[i] = v[pos_menor];
         v[pos_menor] = aux;
