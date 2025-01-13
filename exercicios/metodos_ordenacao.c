@@ -139,8 +139,7 @@ void heap_sort(int *v, int tam){
     }
 }
 
-int main()
-{
+int main(){
     int v[] = {5,7,10,3,9,8,6,1,0,2,4};
     int tam = 11;  
     
